@@ -142,7 +142,30 @@ Words.prototype[Symbol.iterator] = function () {
 };
 
 // Uncomment the lines below to test your work
-const helloWorld = new Words("Hello World ");
-for (let word of helloWorld) {
-  console.log(word);
-} // -> should log 'Hello' and 'World'
+// const helloWorld = new Words("Hello World ");
+// for (let word of helloWorld) {
+//   console.log(word);
+// } // -> should log 'Hello' and 'World'
+
+/*
+Build a function that walks through an array and returns the element concatenated with the string "was found after index x", where x is the previous index.
+Note: if it is the first element it should say that it is the first
+
+*/
+function valueAndPrevIndex(array) {
+  var i = 0;
+  return {
+    sentence() {
+      var str = `${array[i]} ${
+        i > 0 ? `was found after index ${i - 1}` : "it is the first"
+      }`;
+      i++;
+      return str;
+    },
+  };
+}
+
+const returnedSentence = valueAndPrevIndex([4, 5, 6]);
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
