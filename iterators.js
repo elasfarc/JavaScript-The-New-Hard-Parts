@@ -17,7 +17,7 @@ function sumFunc(arr) {
 
 // Uncomment the lines below to test your work
 const array = [1, 2, 3, 4];
-console.log(sumFunc(array)); // -> should log 10
+// console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
   var i = 0;
@@ -30,7 +30,28 @@ function returnIterator(arr) {
 // Uncomment the lines below to test your work
 const array2 = ["a", "b", "c", "d"];
 const myIterator = returnIterator(array2);
-console.log(myIterator()); // -> should log 'a'
-console.log(myIterator()); // -> should log 'b'
-console.log(myIterator()); // -> should log 'c'
-console.log(myIterator()); // -> should log 'd'
+// console.log(myIterator()); // -> should log 'a'
+// console.log(myIterator()); // -> should log 'b'
+// console.log(myIterator()); // -> should log 'c'
+// console.log(myIterator()); // -> should log 'd'
+
+/*
+Challenge 2
+Create an iterator with a next method that returns each value of the array when .next is called.
+*/
+
+function nextIterator(arr) {
+  var i = 0;
+  return {
+    next() {
+      return arr[i++];
+    },
+  };
+}
+
+// Uncomment the lines below to test your work
+const array3 = [1, 2, 3];
+const iteratorWithNext = nextIterator(array3);
+console.log(iteratorWithNext.next()); // -> should log 1
+console.log(iteratorWithNext.next()); // -> should log 2
+console.log(iteratorWithNext.next()); // -> should log 3
