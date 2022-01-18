@@ -166,6 +166,21 @@ function valueAndPrevIndex(array) {
 }
 
 const returnedSentence = valueAndPrevIndex([4, 5, 6]);
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence()); // => 4 it is the first
+// console.log(returnedSentence.sentence()); // => 5 was found after index 0
+// console.log(returnedSentence.sentence()); // => 6 was found after index 1
+
+/*
+Challenge 8
+Write a function that will console.log "hello there", or "gibberish", every three seconds depending on if the word passed into the function is 'english'.
+Do not use any type of loop constructor and only make the call to createConversation once.
+*/
+
+function* createConversation(string) {
+  yield setInterval(
+    () => console.log(string == "english" ? "hello there" : "gibberish"),
+    3000
+  );
+}
+
+console.log(createConversation("english").next());
