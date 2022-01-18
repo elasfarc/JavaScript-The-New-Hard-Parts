@@ -91,6 +91,28 @@ function setIterator(set) {
 // Uncomment the lines below to test your work
 const mySet = new Set("hey");
 const iterateSet = setIterator(mySet);
-console.log(iterateSet.next()); // -> should log 'h'
-console.log(iterateSet.next()); // -> should log 'e'
-console.log(iterateSet.next()); // -> should log 'y'
+// console.log(iterateSet.next()); // -> should log 'h'
+// console.log(iterateSet.next()); // -> should log 'e'
+// console.log(iterateSet.next()); // -> should log 'y'
+
+/*
+Challenge 5
+Create an iterator with a next method that returns an array with two elements (where the first element is the index and the second is the value at that index) when .next is called.
+*/
+
+function indexIterator(arr) {
+  // YOUR CODE HERE
+  var i = 0;
+  return {
+    next() {
+      return [i, arr[i++]];
+    },
+  };
+}
+
+// Uncomment the lines below to test your work
+const array5 = ["a", "b", "c", "d"];
+const iteratorWithIndex = indexIterator(array5);
+console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
