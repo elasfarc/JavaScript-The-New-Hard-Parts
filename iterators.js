@@ -76,4 +76,21 @@ function sumArray(arr) {
 
 // Uncomment the lines below to test your work
 const array4 = [1, 2, 3, 4];
-console.log(sumArray(array4)); // -> should log 10
+// console.log(sumArray(array4)); // -> should log 10
+
+/*
+Challenge 4
+Create an iterator with a next method that returns each value of a set when .next is called
+*/
+
+function setIterator(set) {
+  // YOUR CODE HERE
+  return nextIterator([...set]);
+}
+
+// Uncomment the lines below to test your work
+const mySet = new Set("hey");
+const iterateSet = setIterator(mySet);
+console.log(iterateSet.next()); // -> should log 'h'
+console.log(iterateSet.next()); // -> should log 'e'
+console.log(iterateSet.next()); // -> should log 'y'
